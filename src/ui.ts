@@ -219,7 +219,7 @@ export default class Ui {
       attributes.autoplay = true;
       attributes.loop = true;
       attributes.muted = true;
-      attributes.playsinline = true;
+      attributes.playsInline = true;
 
       /**
        * Change event to be listened

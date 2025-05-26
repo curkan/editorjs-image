@@ -45,6 +45,17 @@ type ImageToolConstructorOptions = BlockToolConstructorOptions<ImageToolData, Im
  */
 export default class ImageTool implements BlockTool {
   /**
+   * Prevents image attributes from being removed during sanitization phase
+   *
+   */
+
+  static get 'sanitize'() {
+    return {
+      'img': true
+    };
+  }
+
+  /**
    * Editor.js API instance
    */
   private api: API;
@@ -108,6 +119,7 @@ export default class ImageTool implements BlockTool {
       uploader: config.uploader,
       actions: config.actions,
       features: config.features || {},
+      attributes: config.attributes || {}
     };
 
     /**

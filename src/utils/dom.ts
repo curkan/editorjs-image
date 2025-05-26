@@ -16,7 +16,14 @@ export function make(tagName: string, classNames: string[] | string | null = nul
 
   for (const attrName in attributes) {
     if (attributes.hasOwnProperty(attrName)) {
-      (el as unknown as { [key: string]: string | boolean })[attrName] = attributes[attrName];
+        const value = attributes[attrName];
+
+        console.log(typeof value)
+        if (typeof value === 'boolean') {
+            (el as HTMLElement).setAttribute(attrName, value ? 'true' : 'false');
+        } else {
+            (el as HTMLElement).setAttribute(attrName, value);
+        }
     }
   }
 

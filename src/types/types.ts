@@ -199,6 +199,7 @@ export interface ImageConfig {
    * Tunes to be enabled.
    */
   features?: FeaturesConfig;
+  attributes?: any;
 }
 
 /**
