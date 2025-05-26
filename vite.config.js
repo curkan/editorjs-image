@@ -16,8 +16,11 @@ export default {
       fileName: "image",
     }
   },
+  root: './dev',
   server: {
-    open: './dev/index.html',
+    host: '0.0.0.0', // Добавьте эту строку
+    port: 3000,      // Явно укажите порт
+    open: '/',
   },
   define: {
     NODE_ENV: JSON.stringify(NODE_ENV),
